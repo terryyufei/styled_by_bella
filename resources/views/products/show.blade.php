@@ -19,6 +19,6 @@
             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="max-width: 100%; height: auto;">
         </div>
         @endif
-        <a href="{{ route('products.index') }}">Back to list</a>
+        <a href="{{ route('products.create') }}">Back to list</a>
     </div>
 </x-app-layout>
