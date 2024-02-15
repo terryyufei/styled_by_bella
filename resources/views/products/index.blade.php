@@ -5,8 +5,8 @@
         @foreach ($products as $product)
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    @if($product->img)
-                        <img src="{{ asset('storage/' . $product->img) }}" class="card-img-top" alt="{{ $product->name }}" style="object-fit: cover; height: 200px;">
+                    @if($product->image)
+                        <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}" style="object-fit: cover; height: 200px;">
                     @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $product->name }}</h5>

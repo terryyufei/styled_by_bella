@@ -39,7 +39,7 @@ Route::resource('categories', CategoryController::class);
 // Products
 
 // Display a listing of the products
-Route::get('/items', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 // Show the form for creating a new product
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');

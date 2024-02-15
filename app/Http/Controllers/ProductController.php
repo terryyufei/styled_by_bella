@@ -43,14 +43,8 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
         ]);
 
-        // $path = null;
-        // if ($request->hasFile('image')) {
-        //     $path = $request->file('image')->store('public/products');
-        //     // If you need to save the path relative to the storage folder in the database:
-        //     $path = Storage::url($path);}
-
-        $filename = time() . '.' . $request->image->extension();
-        $request->image->storeAs('public/img', $filename);
+        
+        $filename = $this->saveUploadedFile($request, 'image');
 
 
 
@@ -64,7 +58,23 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.create')->with('success', 'Product added successfully');
+        return redirect()->route('products.index')->with('success', 'Product added successfully');
+    }
+
+    public function saveUploadedFile($request, $field, $previousFilename = null)
+    {
+        $file = $request->file($field);
+    
+        if ($file) {
+            $destinationPath = 'img/';
+            $filename = date('YmdHis') . "_" . $file->getClientOriginalName();
+            $file->move($destinationPath, $filename);
+            return $filename;
+        } elseif ($previousFilename) {
+            return $previousFilename;
+        } else {
+            return null;
+        }
     }
 
     /**
