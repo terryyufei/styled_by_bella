@@ -193,7 +193,7 @@
             </div>
 
 
-            <div class="md:flex gap-60 text-center md:text-left pt-5">
+            <div class="md:flex gap-16 lg:gap-40 text-center md:text-left pt-5">
                 {{-- useful links div --}}
                 <div>
                     <h4 class="text-yellow-900 text-lg">Useful Links</h4>
