@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="p-5 mt-10">
         
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             @foreach ($products as $product)
                 <div class="max-w-sm mx-auto">
                     <div class="bg-white shadow-lg hover:shadow-lg rounded-lg overflow-hidden h-full">
