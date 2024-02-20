@@ -18,8 +18,16 @@
                     <strong>Size:</strong> {{ $product->size }}
                 </div>
                 <div>
-                    <strong>Category:</strong> {{ $product->category->name ?? 'N/A' }}
+                    <strong>Category:</strong>
+                    @if($product->category)
+                        <a class="text-pink-600 underline" href="/categories/{{ $product->category->id }}">
+                            {{ $product->category->name }}
+                        </a>
+                    @else
+                        N/A
+                    @endif
                 </div>
+                
 
                 <div class="md:flex gap-8 pt-5">
 

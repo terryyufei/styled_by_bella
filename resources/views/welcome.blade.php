@@ -86,12 +86,12 @@
 
 
         {{-- ++++++++++++++++++++++ABOUT++++++++++++++++++++++++  --}}
-        <section class=" bg-white">
+        <section class=" bg-red-500">
             {{-- you can have anything div  --}}
 
             <div class="md:flex">{{-- flex div  --}}
                 <div class="p-5 md:w-3/5 md:mt-40 md:pl-10 md:pr-10 ">
-                    <h2 class="text-xl pb-2 text-yellow-800 font-bold italic text-center md:text-2xl">
+                    <h2 class="text-xl pb-2 text-blue-800 font-bold italic text-center md:text-2xl">
                         You can have anything you want in life if you dress for it
                     </h2>
                     <p class="text-gray-400 text-justify md:text-l">
@@ -119,7 +119,7 @@
 
             {{-- everyone can explore div --}}
 
-            <div class="md:flex flex-row-reverse">{{-- flex div  --}}
+            <div class="bg-yellow-300 md:flex flex-row-reverse">{{-- flex div  --}}
                 <div class="p-5 md:w-3/5 md:mt-40 md:pl-10 md:pr-10 ">
                     <h2 class="text-xl pb-2 text-yellow-800 font-bold italic text-center md:text-2xl">
                         Everyone can explore the style they want

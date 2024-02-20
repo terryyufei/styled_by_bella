@@ -43,7 +43,7 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
         ]);
 
-        
+
         $filename = $this->saveUploadedFile($request, 'image');
 
 
@@ -64,7 +64,7 @@ class ProductController extends Controller
     public function saveUploadedFile($request, $field, $previousFilename = null)
     {
         $file = $request->file($field);
-    
+
         if ($file) {
             $destinationPath = 'img/';
             $filename = date('YmdHis') . "_" . $file->getClientOriginalName();
@@ -92,15 +92,44 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         //
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'size' => 'required|string',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        $filename = $product->image; // Default to existing filename
+        if ($request->hasFile('image')) {
+            // Handle file upload
+            $filename = $this->saveUploadedFile($request, 'image', $product->image);
+        }
+
+        $product->update([
+            'name' => $request->name,
+            'image' => $filename,
+            'size' => $request->size,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+        ]);
+
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -108,5 +137,8 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 }
