@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,9 +60,13 @@ Route::put('/products/{product}', [ProductController::class, 'update'])->name('p
 Route::patch('/products/{product}', [ProductController::class, 'update']);
 
 
-Route::get('/orders', function () {
-    dd ('orders');
-});
+// ORDERS
+Route::resource('orders', OrderController::class);
+
+// CART 
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart/remove/{productId}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 
 
 require __DIR__.'/auth.php';
