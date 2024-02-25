@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="m-5 md:m-10 bg-gray-200 rounded-lg shadow-md p-5 md:h-screen">
-    <ul class="md:flex justify-center items-center gap-4 md:mt-20">
+    <div class="m-5 md:m-10 bg-gray-200 rounded-lg shadow-md p-5 lg:h-full lg:mt-20">
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5  gap-4">
         @foreach ($categories as $category)
             @php
                 $imagePath = '';

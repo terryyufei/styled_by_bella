@@ -4,7 +4,7 @@
             {{ $category->name }} Products
         </h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($category->products as $product)
                 <div class="max-w-sm mx-auto">
                     <div class="bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden h-full">

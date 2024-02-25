@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     //
     public function addToCart(Request $request, $productId)
     {
+        if(!Auth::check())
+        {
+            return redirect()->route('register')->with('error', 'Please log in to add to cart');
+        }
+        
         $product = Product::findOrFail($productId);
         $cart = session()->get('cart', []);
 
