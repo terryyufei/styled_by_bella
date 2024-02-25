@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="antialiased bg-[url('/img/background.png')] bg-no-repeat">
+<body class="antialiased bg-[url('/img/background.png')] bg-no-repeat ">
 
     <!-- ++++++++++++++NAVIGATION BAR+++++++++++++ -->
     <nav class="flex items-center h-14 p-3 z-10" x-data="{ open: false }">
@@ -26,7 +26,7 @@
 
         <div class="ml-auto flex flex-col pr-8" @click.away="open = false">
             <!-- Toggle button for dropdown -->
-            <div class="px-4 cursor-pointer md:hidden" @click="open = !open">
+            <div class="px-4 cursor-pointer lg:hidden" @click="open = !open">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -35,31 +35,31 @@
             </div>
 
             <!-- Dropdown Menu -->
-            <ul :class="{ 'hidden': !open, 'flex': open }" class="text-yellow-800 flex-col md:flex-row md:gap-6 md:flex"
+            <ul :class="{ 'hidden': !open, 'flex': open }" class="text-yellow-800 flex-col lg:flex-row lg:gap-6 lg:flex"
                 id="nav">
                 <li><a href="#" class="hover:text-yellow-500" @click="open = false">Home</a></li>
                 <li><a href="#about" class="hover:text-yellow-500" @click="open = false">About</a></li>
-                <li><a href="#testimonials" class="hover:text-yellow-500" @click="open = false">Collections</a>
+                <li><a href="#collections" class="hover:text-yellow-500" @click="open = false">Collections</a>
                 </li>
-                <li><a href="#workwithus" class="hover:text-yellow-500" @click="open = false">Testimonials</a></li>
-                <li><a href="#contact" class="hover:text-yellow-500" @click="open = false">Contact us</a></li>
+                <li><a href="{{ route('products.index') }}" class="hover:text-yellow-500" @click="open = false">Shop</a></li>
+                <li><a href="#contact" class="hover:text-yellow-500" @click="open = false">Contact</a></li>
             </ul>
         </div>
     </nav>
     <main>
 
         {{-- +++++++++++++++++++HOME++++++++++++  --}}
-        <section class="h-full relative shadow-lg">
+        <section class="h-full relative">
             {{-- flex div --}}
-            <div class="md:flex flex-row-reverse justify-between items-center h-full">
+            <div class="md:flex flex-row-reverse justify-between items-center h-full md:h-96 lg:h-full">
 
                 {{-- image div  --}}
 
 
-                <img class="md:w-4/12 mr-28 mt-20 md:mt-0" src="img/ladyinyellow.png" alt="lady in pink">
+                <img class="lg:w-4/12 mr-28 mt-20  lg:mt-0" src="img/ladyinyellow.png" alt="lady in pink">
 
                 {{-- text div  --}}
-                <div class="font-light">
+                <div class="font-light bg-green-500">
                     <div class="absolute inset-40 -z-10 md:ml-28 md:mt-28">
                         <h1 class="md:text-6xl text-sm text-yellow-800 tracking-wide">
                             You should always<br>feel pretty
@@ -75,7 +75,7 @@
 
             </div>
 
-            <div class="rotate-90 absolute -left-16 bottom-64 text-gray-400 invisible md:visible">
+            <div class="rotate-90 absolute -left-16 bottom-64 text-gray-400 invisible lg:visible">
                 <a href="">INSTAGRAM</a>
                 <a class="pl-4 pr-4" href="">X</a>
                 <a href="">FACEBOOK</a>
@@ -86,15 +86,15 @@
 
 
         {{-- ++++++++++++++++++++++ABOUT++++++++++++++++++++++++  --}}
-        <section class=" bg-red-500">
+        <section class="bg-white" id="about">
             {{-- you can have anything div  --}}
 
-            <div class="md:flex">{{-- flex div  --}}
-                <div class="p-5 md:w-3/5 md:mt-40 md:pl-10 md:pr-10 ">
-                    <h2 class="text-xl pb-2 text-blue-800 font-bold italic text-center md:text-2xl">
+            <div class="lg:flex">{{-- flex div  --}}
+                <div class="p-5 lg:w-3/5 md:mt-40 lg:pl-10 md:pr-10 ">
+                    <h2 class="text-xl pb-2 font-bold italic text-center text-yellow-800 md:text-2xl">
                         You can have anything you want in life if you dress for it
                     </h2>
-                    <p class="text-gray-400 text-justify md:text-l">
+                    <p class="text-gray-400 text-justify lg:text-lg">
                         Whether it's conquering the boardroom, expressing your unique personality, or simply embracing
                         the
                         day
@@ -107,9 +107,9 @@
                         partner
                         in creating a wardrobe that speaks volumes about your aspirations and individuality.
                     </p>
-                    <a href="{{ route('register') }}">
+                    <a href="{{ route('products.index') }}">
                     <button
-                        class=" mt-5 text-white text-lg bg-gradient-to-r from-yellow-400 to-yellow-900 hover:from-purple-500 hover:to-yellow-500 px-8 py-2 rounded">
+                        class=" mt-5 text-white text-lg bg-gradient-to-r from-yellow-900 to-yellow-500 hover:from-yellow-500 hover:to-yellow-900 px-8 py-2 rounded">
                         Buy Now
                     </button>
                     </a>
@@ -119,8 +119,8 @@
 
             {{-- everyone can explore div --}}
 
-            <div class="bg-yellow-300 md:flex flex-row-reverse">{{-- flex div  --}}
-                <div class="p-5 md:w-3/5 md:mt-40 md:pl-10 md:pr-10 ">
+            <div class="lg:flex flex-row-reverse">{{-- flex div  --}}
+                <div class="p-5 lg:w-3/5 lg:mt-40 md:pl-10 md:pr-10 ">
                     <h2 class="text-xl pb-2 text-yellow-800 font-bold italic text-center md:text-2xl">
                         Everyone can explore the style they want
                     </h2>
@@ -137,9 +137,9 @@
                         partner
                         in creating a wardrobe that speaks volumes about your aspirations and individuality.
                     </p>
-                    <a href="{{ route('register') }}">
+                    <a href="{{ route('products.index') }}">
                     <button
-                        class=" mt-5 text-white text-lg bg-gradient-to-r from-yellow-400 to-yellow-900 hover:from-purple-500 hover:to-yellow-500 px-8 py-2 rounded">
+                        class=" mt-5 text-white text-lg bg-gradient-to-r from-yellow-900 to-yellow-500 hover:from-yellow-500 hover:to-yellow-900 px-8 py-2 rounded">
                         Buy Now
                     </button>
                 </a>
@@ -150,11 +150,11 @@
         </section>
 
         {{-- COLLECTIONS --}}
-        <section class="bg-gray-0 md:h-screen ">
+        <section class="bg-gray-0 " id="collections">
             <h2 class="text-4xl text-center pt-10 text-yellow-800">
                 Our Collections
             </h2>
-            <div class="md:flex p-5 gap-4 md:pt-36">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 gap-4 md:pt-36">
 
                 {{-- summer div --}}
                 <div class="p-5 mb-4 bg-gray-100 rounded-lg shadow-lg hover:scale-105">
@@ -186,7 +186,7 @@
     </main>
 
 
-    <footer class="bg-gradient-to-r from-purple-100 via-sky-100 to-sky-200  pt-10 pl-10 pr-10 pb-5  gap-10">
+    <footer class="bg-gradient-to-r from-purple-100 via-sky-100 to-sky-200  pt-10 pl-10 pr-10 pb-5 gap-10" id="contact">
         <div class="md:flex gap-10">
             <div class="md:mr-20 md:ml-10">
                 <img src="img/logo8.png" alt="logo">
@@ -198,10 +198,10 @@
                 <div>
                     <h4 class="text-yellow-900 text-lg">Useful Links</h4>
                     <ul class="text-gray-500 pb-5">
-                        <li class="hover:text-yellow-800"><a href="">Home</a></li>
-                        <li class="hover:text-yellow-800"><a href="">Shop</a></li>
-                        <li class="hover:text-yellow-800"><a href="">Collections</a></li>
-                        <li class="hover:text-yellow-800"><a href="">About</a></li>
+                        <li class="hover:text-yellow-800"><a href="#">Home</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('products.index') }}">Shop</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('categories.index') }}">Collections</a></li>
+                        <li class="hover:text-yellow-800"><a href="#about">About</a></li>
                     </ul>
                 </div>
 
@@ -209,10 +209,10 @@
                 <div>
                     <h4 class="text-yellow-900 text-lg">Our collections</h4>
                     <ul class="text-gray-500 pb-5">
-                        <li class="hover:text-yellow-800"><a href="">Summer</a></li>
-                        <li class="hover:text-yellow-800"><a href="">Fall</a></li>
-                        <li class="hover:text-yellow-800"><a href="">Winter</a></li>
-                        <li class="hover:text-yellow-800"><a href="">Spring</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('categories.index') }}">Summer</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('categories.index') }}">Fall</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('categories.index') }}">Winter</a></li>
+                        <li class="hover:text-yellow-800"><a href="{{ route('categories.index') }}">Spring</a></li>
                     </ul>
                 </div>
 
