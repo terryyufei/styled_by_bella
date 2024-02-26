@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,8 @@ Route::patch('/products/{product}', [ProductController::class, 'update']);
 
 // ORDERS
 Route::resource('orders', OrderController::class);
+
+
 
 
 

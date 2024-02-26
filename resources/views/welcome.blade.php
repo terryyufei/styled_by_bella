@@ -39,11 +39,12 @@
                 id="nav">
                 <li><a href="#" class="hover:text-yellow-500" @click="open = false">Home</a></li>
                 <li><a href="#about" class="hover:text-yellow-500" @click="open = false">About</a></li>
-                <li><a href="#collections" class="hover:text-yellow-500" @click="open = false">Collections</a>
+                <li><a href="{{ route('categories.index') }}" class="hover:text-yellow-500" @click="open = false">Collections</a>
                 </li>
                 <li><a href="{{ route('products.index') }}" class="hover:text-yellow-500" @click="open = false">Shop</a>
                 </li>
                 <li><a href="#contact" class="hover:text-yellow-500" @click="open = false">Contact</a></li>
+                <li><a href="{{ route('login')}}" class="hover:text-yellow-500" @click="open = false">Log In</a></li>
             </ul>
         </div>
     </nav>
@@ -256,7 +257,7 @@
 
         <div class="pt-10 text-center text-gray-500 md:flex justify-center">
             <p class="">
-                Styled By Bella &copy; 2024 All rights Reserved.
+                Styled By Bella &copy; <span id="current-year">2024</span> All rights Reserved.
             </p>
             <p class="text-yellow-800">
                 Terms and condtions.
@@ -269,6 +270,12 @@
 
 
     </footer>
+
+     <!-- Dynamic Date -->
+     <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </body>
 
 </html>
