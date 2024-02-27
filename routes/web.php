@@ -6,6 +6,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +73,17 @@ Route::patch('/products/{product}', [ProductController::class, 'update']);
 
 // ORDERS
 Route::resource('orders', OrderController::class);
+
+// Checkout
+Route::get('/checkout', [CheckoutController::class, 'showCheckoutForm'])->name('checkout.show')->middleware('auth');
+
+// Process checkout
+Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process')->middleware('auth');
+
+Route::get('/order/success', function () {
+    return view('orders.success');
+})->name('orders.success')->middleware('auth');
+
 
 
 

@@ -18,6 +18,9 @@
                 </div>
             @endforeach
         </div>
+        <div class="pt-5">
+        {{ $products->links() }}
+    </div>
     </div>
     
 </x-app-layout>

@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Session;
@@ -14,7 +15,7 @@ class CartController extends Controller
     {
         if(!Auth::check())
         {
-            return redirect()->route('register')->with('error', 'Please log in to add to cart');
+            return redirect()->route('login')->with('error', 'Please log in to add to cart :)');
         }
         
         $product = Product::findOrFail($productId);
@@ -32,7 +33,7 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect('cart')->with('success', 'Product added to cart successfully!');
     }
 
     public function showCart()
