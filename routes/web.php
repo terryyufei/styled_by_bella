@@ -60,6 +60,8 @@ Route::get('/products/create', [ProductController::class, 'create'])->name('prod
 // Store a newly created product in storage
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+
 // Display the specified product
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 
@@ -83,6 +85,10 @@ Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('
 Route::get('/order/success', function () {
     return view('orders.success');
 })->name('orders.success')->middleware('auth');
+
+// Search
+// Route::get('/products/{product}', [ProductController::class, 'search'])->name('products.search');
+
 
 
 

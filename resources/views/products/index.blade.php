@@ -1,4 +1,9 @@
 <x-app-layout>
+    <form action="{{ route('products.search') }}" method="GET">        
+        <input type="text" name="query" placeholder="Search products..." required>
+        <button type="submit">Search</button>
+    </form>
+    
     <div class="p-5 mt-10">
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
