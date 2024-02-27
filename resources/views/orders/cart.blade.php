@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="m-5 md:m-10 ">        
+    <div class="m-5 md:m-10 ">
 
         <h2
             class="flex justify-center items-center gap-2 text-xl font-extrabold text-yellow-900 border-b-2 border-yellow-900 pb-2">
@@ -10,7 +10,7 @@
                     d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
             </svg>
         </h2>
-       
+
 
         @if (session('cart'))
             <div class="mt-5">
@@ -39,27 +39,30 @@
 
                         {{-- plus minus --}}
                         <div class="flex justify-between  pt-2 md:mt-20">
-                            
+
 
                             <form action="{{ route('cart.add', $id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="p-2 md:mr-5 bg-green-300 rounded-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                      </svg>                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
                                 </button>
                             </form>
 
                             <form action="{{ route('cart.remove', $id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="p-2 bg-rose-300 rounded-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />                                        
-                                      </svg>                                   
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                    </svg>
                                 </button>
                             </form>
 
-                            
+
                         </div>
                     </div>
                 @endforeach
@@ -68,7 +71,7 @@
                 </div>
 
                 <div class="mt-5 text-center p-4 text-lg text-white">
-                    
+
 
                     <a href="{{ route('products.index') }}">
                         <x-third-button class="ms-3 md:mt-5">Continue shopping
@@ -81,14 +84,20 @@
                         </x-third-button>
                     </a>
 
-                    <x-secondary-button class="ms-3 mt-5">
-                        Proceed to Checkout                        
-                    </x-secondary-button>
+                    <a href="{{ route('checkout.show')}}">
+                        <x-secondary-button class="ms-3 mt-5">
+                            Proceed to Checkout
+                        </x-secondary-button>
+                    </a>
 
                 </div>
             </div>
         @else
-            <p>Your cart is empty.</p>
-        @endif   
+            <div class="mt-10">
+                <p>Your cart is empty :( </p>
+                <a href="{{ route('products.index') }}" class="text-yellow-700 underline hover:text-purple-600">Start
+                    Shopping!</a>
+            </div>
+        @endif
     </div>
 </x-app-layout>
