@@ -35,7 +35,7 @@
             </div>
 
             <!-- Dropdown Menu -->
-            <ul :class="{ 'hidden': !open, 'flex': open }" class="text-yellow-800 flex-col lg:flex-row lg:gap-6 lg:flex"
+            <ul :class="{ 'hidden': !open, 'flex': open }" class="text-yellow-800 flex-col lg:flex-row lg:gap-6 lg:flex pt-4"
                 id="nav">
                 <li><a href="#" class="hover:text-yellow-500" @click="open = false">Home</a></li>
                 <li><a href="#about" class="hover:text-yellow-500" @click="open = false">About</a></li>

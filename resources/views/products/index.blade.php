@@ -1,12 +1,15 @@
 <x-app-layout>
-    <form action="{{ route('products.search') }}" method="GET">        
-        <input type="text" name="query" placeholder="Search products..." required>
-        <button type="submit">Search</button>
-    </form>
+    <div class="flex justify-center items-center">
+        <form action="{{ route('products.search') }}" method="GET" class="pt-5">        
+            <x-text-input type="text" name="query" placeholder="Search products..." required />
+            <x-secondary-button type="submit">Search</x-secondary-button>
+        </form>
+    </div>
+    
     
     <div class="p-5 mt-10">
         
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($products as $product)
                 <div class="max-w-sm mx-auto">
                     <div class="bg-white shadow-lg hover:shadow-lg rounded-lg overflow-hidden h-full">

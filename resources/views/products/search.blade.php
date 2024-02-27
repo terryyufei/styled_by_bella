@@ -3,7 +3,7 @@
         <h2 class="p-5 text-lg text-yellow-900 font-bold">Search Results</h2>
 
         @if ($results->isNotEmpty())
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach ($results as $product)
                     <div>
                         <div class="bg-white shadow-lg hover:shadow-lg rounded-lg overflow-hidden h-full">

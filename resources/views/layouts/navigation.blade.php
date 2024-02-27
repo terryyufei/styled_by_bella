@@ -34,7 +34,7 @@
             </div>
             
 
-            @if (Auth::check())
+           
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
@@ -94,8 +94,7 @@
                         </svg>
                     </button>
                 </div>
-            @else
-            @endif
+            
         </div>
     </div>
 
@@ -103,7 +102,7 @@
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Home') }}
             </x-responsive-nav-link>
 
             {{-- All products --}}
