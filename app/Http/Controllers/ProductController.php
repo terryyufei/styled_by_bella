@@ -15,8 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-         $products =  Product::paginate(12);
-       
+        $products = Product::paginate(12);
+
         return view('products.index', compact('products'));
     }
 
@@ -141,5 +141,14 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully');
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');        
+        $results = Product::where('name', 'like', "%$query%")->get();
+
+
+        return view('products.search', compact('results'));
     }
 }
