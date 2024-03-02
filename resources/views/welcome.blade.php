@@ -35,16 +35,17 @@
             </div>
 
             <!-- Dropdown Menu -->
-            <ul :class="{ 'hidden': !open, 'flex': open }" class="text-yellow-800 flex-col lg:flex-row lg:gap-6 lg:flex pt-4"
-                id="nav">
+            <ul :class="{ 'hidden': !open, 'flex': open }"
+                class="text-yellow-800 flex-col lg:flex-row lg:gap-6 lg:flex pt-4" id="nav">
                 <li><a href="#" class="hover:text-yellow-500" @click="open = false">Home</a></li>
                 <li><a href="#about" class="hover:text-yellow-500" @click="open = false">About</a></li>
-                <li><a href="{{ route('categories.index') }}" class="hover:text-yellow-500" @click="open = false">Collections</a>
+                <li><a href="{{ route('categories.index') }}" class="hover:text-yellow-500"
+                        @click="open = false">Collections</a>
                 </li>
                 <li><a href="{{ route('products.index') }}" class="hover:text-yellow-500" @click="open = false">Shop</a>
                 </li>
                 <li><a href="#contact" class="hover:text-yellow-500" @click="open = false">Contact</a></li>
-                <li><a href="{{ route('login')}}" class="hover:text-yellow-500" @click="open = false">Log In</a></li>
+                <li><a href="{{ route('login') }}" class="hover:text-yellow-500" @click="open = false">Log In</a></li>
             </ul>
         </div>
     </nav>
@@ -97,17 +98,11 @@
                         You can have anything you want in life if you dress for it
                     </h2>
                     <p class="text-gray-400 text-justify lg:text-lg">
-                        Whether it's conquering the boardroom, expressing your unique personality, or simply embracing
-                        the
-                        day
-                        with flair, Baobei Fashion is here to be your accomplice on your journey to success. Every piece
-                        in
-                        our
-                        collection is curated to inspire and elevate, because we believe that your style should be a
-                        reflection
-                        of your limitless potential. So, dress for the life you envision, and let Baobei Fashion be your
-                        partner
-                        in creating a wardrobe that speaks volumes about your aspirations and individuality.
+                        Styled by Bella was born from a simple yet revolutionary vision: to make fashion accessible,
+                        cohesive, and effortlessly stylish for everyone. We believe in the power of a well-put-together
+                        outfit and its ability to boost confidence, convey professionalism, and express individuality.
+                        Our collections are carefully selected by our team of fashion experts who are passionate about
+                        creating looks that are not only trend-setting but also timeless and versatile.
                     </p>
                     <a href="{{ route('products.index') }}">
                         <button
@@ -127,17 +122,12 @@
                         Everyone can explore the style they want
                     </h2>
                     <p class="text-gray-400 text-justify md:text-l">
-                        Whether it's conquering the boardroom, expressing your unique personality, or simply embracing
-                        the
-                        day
-                        with flair, Baobei Fashion is here to be your accomplice on your journey to success. Every piece
-                        in
-                        our
-                        collection is curated to inspire and elevate, because we believe that your style should be a
-                        reflection
-                        of your limitless potential. So, dress for the life you envision, and let Baobei Fashion be your
-                        partner
-                        in creating a wardrobe that speaks volumes about your aspirations and individuality.
+                        From the boardroom to the beach, and every occasion in between, Styled by Bella offers a diverse
+                        range of outfits that are specially designed to cater to different moods, settings, and
+                        personalities. Each ensemble is thoughtfully composed to ensure that accessories, shoes, and
+                        clothing pieces complement each other perfectly. Our goal is to provide you with a hassle-free
+                        shopping experience where you can find your ideal outfit with just a few clicks, ready to be
+                        worn as soon as it arrives at your door.
                     </p>
                     <a href="{{ route('products.index') }}">
                         <button
@@ -192,7 +182,7 @@
         id="contact">
         <div class="md:flex gap-10">
             <div class="md:mr-20 md:ml-10">
-               <a href="#home"> <img src="img/logo8.png" alt="logo"> </a>
+                <a href="#home"> <img src="img/logo8.png" alt="logo"> </a>
             </div>
 
 
@@ -263,16 +253,16 @@
                 Terms and condtions.
             </p>
             <p>
-                Made with ❤️ by <a class="text-yellow-800 hover:text-purple-900" href="https://portfolio-tau-two-84.vercel.app/"
-                    target="_blank">Terry Wambui</a>
+                Made with ❤️ by <a class="text-yellow-800 hover:text-purple-900"
+                    href="https://portfolio-tau-two-84.vercel.app/" target="_blank">Terry Wambui</a>
             </p>
         </div>
 
 
     </footer>
 
-     <!-- Dynamic Date -->
-     <script>
+    <!-- Dynamic Date -->
+    <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 
