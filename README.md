@@ -1,5 +1,7 @@
 # Styled By Bella
-#### A laravel e-commerce website
+#### *A laravel e-commerce Fashion website*
+
+![](./public/img/landing-page.png)
 
 
 Welcome to <a href="https://styledbybella.studio/" target="_blank">Styled by Bella</a>, a modern, responsive eCommerce platform built with Laravel, Tailwind CSS and Alpine.js, focusing on fashion retail. My goal is to provide a seamless shopping experience for users looking to purchase fashion items online, with an emphasis on intuitive design, user-friendly navigation, and secure checkout processes.
@@ -149,3 +151,22 @@ We welcome contributions to Styled by Bella. Please read our contributing guidel
     I wouldn't have been able to complete this project without the support of these resources and individuals. 
     Your contributions have been invaluable, and I am grateful for the knowledge, encouragement, 
     and camaraderie that fueled the development of Styled By Bella. Thank you!
+
+### Screenshots
+
+#### Mobile version
+
+![](./public/img/mobile.png)
+
+#### Products View
+
+![](./public/img/products.png)
+
+#### Categories View
+![](./public/img/categories.png)
+
+### Cart View
+![](./public/img/cart.png)
+
+#### Checkout View
+![](./public/img/order_success.png)
