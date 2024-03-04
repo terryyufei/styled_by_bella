@@ -137,7 +137,7 @@ We welcome contributions to Styled by Bella. Please read our contributing guidel
             developer. His constructive feedback and collaborative efforts significantly enhanced the quality of the project.
         </li>
         <li>
-            My friend and mentor, <a href="https://github.com/Domains18">Gibson</a>.
+            My friend and mentor, <a href="https://github.com/Domains18">Gibsons</a>.
             A special thanks for being my personal rubber duck, and for actively participating in discussions, brainstorming sessions, and code reviews.
             And for believing in me even when I didn't.
         </li>
@@ -152,21 +152,4 @@ We welcome contributions to Styled by Bella. Please read our contributing guidel
     Your contributions have been invaluable, and I am grateful for the knowledge, encouragement, 
     and camaraderie that fueled the development of Styled By Bella. Thank you!
 
-### Screenshots
 
-#### Mobile version
-
-![](./public/img/mobile.png)
-
-#### Products View
-
-![](./public/img/products.png)
-
-#### Categories View
-![](./public/img/categories.png)
-
-### Cart View
-![](./public/img/cart.png)
-
-#### Checkout View
-![](./public/img/order_success.png)
