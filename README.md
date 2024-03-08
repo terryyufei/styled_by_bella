@@ -18,7 +18,7 @@ This project was developed as part of my <a href="https://www.alxafrica.com/" ta
     - Eloquent Relationships
     - Middleware
 
-### Fronted
+### Frontend
 - Tailwind Css
 - Alpine.js
 - Blade Templating Engine
